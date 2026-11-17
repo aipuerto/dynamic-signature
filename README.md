@@ -3,7 +3,7 @@
 **Email signatures and digital business cards that stay up to date, on a single Cloudflare Worker.**
 No build step, no dependencies, ~90 KB of code. Runs on the Cloudflare free tier (Workers + KV + D1).
 
-📖 **Full step-by-step install guide with screenshots: [aipuerto.com/dynamic-signature](https://aipuerto.com/dynamic-signature/)** (Turkish)
+📖 **Full step-by-step install guide with screenshots: [aipuerto.com/dynamic-signature](https://aipuerto.com/dynamic-signature/)** (EN, ES, TR, PT, FR, ZH)
 
 English UI · cards and signatures in **6 languages** (EN, ES, TR, PT, FR, ZH) · MIT licensed · All demo data (company, people, phones, fairs, avatars, video) is fictional.
 
@@ -80,7 +80,7 @@ This project keeps the *parts that can update* (hosted images, logo, colors, lin
 
 ## Quick start
 
-> The short version is below. For the detailed, illustrated walkthrough (Cloudflare login, KV and D1, admin key, deploy, first signature, troubleshooting) see **[aipuerto.com/dynamic-signature](https://aipuerto.com/dynamic-signature/)** (Turkish).
+> The short version is below. For the detailed, illustrated walkthrough (Cloudflare login, KV and D1, admin key, deploy, first signature, troubleshooting) see **[aipuerto.com/dynamic-signature](https://aipuerto.com/dynamic-signature/)** (EN, ES, TR, PT, FR, ZH).
 
 ```bash
 git clone https://github.com/aipuerto/dynamic-signature && cd dynamic-signature
