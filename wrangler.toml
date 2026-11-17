@@ -1,0 +1,22 @@
+name = "dynamic-signature"
+main = "src/worker.mjs"
+compatibility_date = "2026-01-01"
+
+# 1) npx wrangler kv namespace create KV        -> paste the id below
+[[kv_namespaces]]
+binding = "KV"
+id = "REPLACE_WITH_KV_NAMESPACE_ID"
+
+# 2) npx wrangler d1 create dynamic-signature   -> paste the id below
+#    npm run db:init                            -> creates the analytics table
+[[d1_databases]]
+binding = "DB"
+database_name = "dynamic-signature"
+database_id = "REPLACE_WITH_D1_DATABASE_ID"
+
+# 3) npx wrangler secret put ADMIN_KEY          -> the password for /admin
+#
+# Optional: serve it on your own domain
+# [[routes]]
+# pattern = "signature.example.com"
+# custom_domain = true

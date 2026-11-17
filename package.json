@@ -1,0 +1,19 @@
+{
+  "name": "dynamic-signature",
+  "version": "1.0.0",
+  "description": "Dynamic e-mail signatures and digital business cards on a single Cloudflare Worker.",
+  "type": "module",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "preview": "node scripts/smoke.mjs --serve",
+    "test": "node scripts/smoke.mjs",
+    "dev": "wrangler dev",
+    "db:init": "wrangler d1 execute dynamic-signature --remote --file=schema.sql",
+    "deploy": "wrangler deploy",
+    "seed": "node scripts/seed.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "^4"
+  }
+}
