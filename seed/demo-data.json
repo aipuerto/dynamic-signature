@@ -1,410 +1,414 @@
 {
-  "company": {
-    "name": "Meridian Bedding Fabrics",
-    "tagline": "Mattress ticking & bedding fabrics",
-    "address": "Demo OSB, 12. Cadde No: 8",
-    "city": "Istanbul",
-    "country": "Türkiye",
-    "phone": "+90 212 000 00 00",
-    "web": "www.meridian-fabrics.example",
-    "email": "info@meridian-fabrics.example",
-    "hours": "Mon–Fri 08:30–17:30",
-    "color": "#14508c",
-    "logo": 0,
-    "palette": [
-      "#14508c",
-      "#1f9d57",
-      "#1a1d24"
-    ],
-    "roles": {
-      "primary": "",
-      "accent": "",
-      "text": "",
-      "line": ""
-    },
-    "season": {
-      "on": false,
-      "name": "New Year",
-      "color": "#b3202a",
-      "from": "2026-12-20",
-      "to": "2027-01-05",
-      "logo": 0
-    },
-    "banner": {
-      "on": true,
-      "text": "Meet us at Heimtextil – Hall 8.0, Stand B21",
-      "link": "https://example.com/fairs"
-    }
+ "company": {
+  "name": "Meridian Bedding Fabrics",
+  "tagline": "Mattress ticking & bedding fabrics",
+  "address": "Demo OSB, 12. Cadde No: 8",
+  "city": "Istanbul",
+  "country": "Türkiye",
+  "phone": "+90 212 000 00 00",
+  "web": "www.meridian-fabrics.example",
+  "email": "info@meridian-fabrics.example",
+  "hours": "Mon–Fri 08:30–17:30",
+  "color": "#14508c",
+  "logo": 0,
+  "palette": [
+   "#14508c",
+   "#1f9d57",
+   "#1a1d24"
+  ],
+  "roles": {
+   "primary": "",
+   "accent": "",
+   "text": "",
+   "line": ""
   },
-  "teams": [
-    {
-      "id": "t1",
-      "name": "Management & Marketing"
-    },
-    {
-      "id": "t2",
-      "name": "Latin America"
-    },
-    {
-      "id": "t3",
-      "name": "Africa & Middle East"
-    },
-    {
-      "id": "t4",
-      "name": "Asia"
-    }
-  ],
-  "members": [
-    {
-      "id": "m1",
-      "name": "Elif Demir",
-      "title": "General Manager",
-      "teamId": "t1",
-      "phone": "+90 555 000 00 01",
-      "office": "+90 212 000 00 00 ext. 101",
-      "wa": "905550000001",
-      "email": "elif@meridian-fabrics.example",
-      "instagram": "demo.elif",
-      "linkedin": "demo-elif",
-      "photo": 0,
-      "video": 0,
-      "boss": "",
-      "orgOn": true,
-      "up": 0,
-      "down": 9
-    },
-    {
-      "id": "m2",
-      "name": "Kerem Yıldız",
-      "title": "Sales Director",
-      "teamId": "t1",
-      "phone": "+90 555 000 00 02",
-      "office": "+90 212 000 00 00 ext. 102",
-      "wa": "905550000002",
-      "email": "kerem@meridian-fabrics.example",
-      "instagram": "demo.kerem",
-      "linkedin": "demo-kerem",
-      "photo": 0,
-      "video": 0,
-      "boss": "m1",
-      "orgOn": true,
-      "up": 1,
-      "down": 9
-    },
-    {
-      "id": "m3",
-      "name": "Carlos Mendoza",
-      "title": "Regional Sales Manager – Latin America",
-      "teamId": "t2",
-      "phone": "+90 555 000 00 03",
-      "office": "+90 212 000 00 00 ext. 103",
-      "wa": "905550000003",
-      "email": "carlos@meridian-fabrics.example",
-      "instagram": "demo.carlos",
-      "linkedin": "demo-carlos",
-      "photo": 0,
-      "video": 0,
-      "boss": "m2",
-      "orgOn": true,
-      "up": 2,
-      "down": 1
-    },
-    {
-      "id": "m4",
-      "name": "Lucía Fernández",
-      "title": "Sales Executive – Latin America",
-      "teamId": "t2",
-      "phone": "+90 555 000 00 04",
-      "office": "+90 212 000 00 00 ext. 104",
-      "wa": "905550000004",
-      "email": "lucia@meridian-fabrics.example",
-      "instagram": "demo.lucia",
-      "linkedin": "demo-lucia",
-      "photo": 0,
-      "video": 0,
-      "boss": "m3",
-      "orgOn": true,
-      "up": 2,
-      "down": 0
-    },
-    {
-      "id": "m5",
-      "name": "Daniel Okoye",
-      "title": "Regional Sales Manager – Africa",
-      "teamId": "t3",
-      "phone": "+90 555 000 00 05",
-      "office": "+90 212 000 00 00 ext. 105",
-      "wa": "905550000005",
-      "email": "daniel@meridian-fabrics.example",
-      "instagram": "demo.daniel",
-      "linkedin": "demo-daniel",
-      "photo": 0,
-      "video": 0,
-      "boss": "m2",
-      "orgOn": true,
-      "up": 2,
-      "down": 1
-    },
-    {
-      "id": "m6",
-      "name": "Fatima Al-Sayed",
-      "title": "Sales Executive – Middle East",
-      "teamId": "t3",
-      "phone": "+90 555 000 00 06",
-      "office": "+90 212 000 00 00 ext. 106",
-      "wa": "905550000006",
-      "email": "fatima@meridian-fabrics.example",
-      "instagram": "demo.fatima",
-      "linkedin": "demo-fatima",
-      "photo": 0,
-      "video": 0,
-      "boss": "m5",
-      "orgOn": true,
-      "up": 2,
-      "down": 0
-    },
-    {
-      "id": "m7",
-      "name": "Mei Lin",
-      "title": "Regional Sales Manager – Asia",
-      "teamId": "t4",
-      "phone": "+90 555 000 00 07",
-      "office": "+90 212 000 00 00 ext. 107",
-      "wa": "905550000007",
-      "email": "mei@meridian-fabrics.example",
-      "instagram": "demo.mei",
-      "linkedin": "demo-mei",
-      "photo": 0,
-      "video": 0,
-      "boss": "m2",
-      "orgOn": true,
-      "up": 2,
-      "down": 1
-    },
-    {
-      "id": "m8",
-      "name": "Arjun Mehta",
-      "title": "Sales Executive – Asia",
-      "teamId": "t4",
-      "phone": "+90 555 000 00 08",
-      "office": "+90 212 000 00 00 ext. 108",
-      "wa": "905550000008",
-      "email": "arjun@meridian-fabrics.example",
-      "instagram": "demo.arjun",
-      "linkedin": "demo-arjun",
-      "photo": 0,
-      "video": 0,
-      "boss": "m7",
-      "orgOn": true,
-      "up": 2,
-      "down": 0
-    },
-    {
-      "id": "m9",
-      "name": "Zeynep Çelik",
-      "title": "Marketing Specialist",
-      "teamId": "t1",
-      "phone": "+90 555 000 00 09",
-      "office": "+90 212 000 00 00 ext. 109",
-      "wa": "905550000009",
-      "email": "zeynep@meridian-fabrics.example",
-      "instagram": "demo.zeynep",
-      "linkedin": "demo-zeynep",
-      "photo": 0,
-      "video": 0,
-      "boss": "m2",
-      "orgOn": true,
-      "up": 1,
-      "down": 0
-    }
-  ],
-  "faq": [
-    {
-      "q": "What do you produce?",
-      "a": "Knitted and woven mattress ticking, quilting fabrics and bedding textiles."
-    },
-    {
-      "q": "What is the minimum order quantity?",
-      "a": "Sample metres are available on request; production MOQ depends on the quality."
-    },
-    {
-      "q": "Which incoterms do you offer?",
-      "a": "EXW, FCA, FOB and CIF are available for most destinations."
-    },
-    {
-      "q": "Can I get samples?",
-      "a": "Yes. Message us on WhatsApp with your address and the qualities you are interested in."
-    }
-  ],
-  "sig": {
-    "tpl": "t1",
-    "blocks": [
-      {
-        "id": "bfair",
-        "type": "fair",
-        "on": true,
-        "dyn": false,
-        "title": "",
-        "col": "1",
-        "items": [
-          {
-            "name": "Heimtextil Frankfurt",
-            "date": "12–15 Jan 2027",
-            "place": "Hall 8.0 · Stand B21",
-            "cc": "de"
-          },
-          {
-            "name": "Istanbul Home Show",
-            "date": "3–7 Mar 2027",
-            "place": "Hall 4 · Stand 112",
-            "cc": "tr"
-          },
-          {
-            "name": "Home Textiles Expo Sao Paulo",
-            "date": "14–17 Jun 2027",
-            "place": "Pavilion B · Stand 37",
-            "cc": "br"
-          }
-        ]
-      },
-      {
-        "id": "bhol",
-        "type": "holiday",
-        "on": true,
-        "dyn": false,
-        "title": "",
-        "col": "2",
-        "text": "Our office is closed 24 Dec – 2 Jan. Orders are answered from 3 Jan.",
-        "from": "2026-12-10",
-        "to": "2027-01-03"
-      },
-      {
-        "id": "blink",
-        "type": "link",
-        "on": true,
-        "title": "",
-        "col": "2",
-        "label": "Download the 2027 catalogue",
-        "url": "https://example.com/catalogue"
-      },
-      {
-        "id": "bpdf",
-        "type": "pdf",
-        "on": false,
-        "title": "",
-        "col": "2",
-        "label": "Product catalogue (PDF)"
-      },
-      {
-        "id": "bimg",
-        "type": "image",
-        "on": false,
-        "title": "",
-        "col": "1",
-        "width": 360
-      },
-      {
-        "id": "bgif",
-        "type": "gif",
-        "on": false,
-        "title": "",
-        "col": "1",
-        "width": 360
-      },
-      {
-        "id": "btxt",
-        "type": "text",
-        "on": false,
-        "dyn": false,
-        "title": "Notice",
-        "col": "1",
-        "text": "Free-text announcement block."
-      }
+  "season": {
+   "on": false,
+   "name": "New Year",
+   "color": "#b3202a",
+   "from": "2026-12-20",
+   "to": "2027-01-05",
+   "logo": 0
+  },
+  "banner": {
+   "on": true,
+   "text": "Meet us at Heimtextil – Hall 8.0, Stand B21",
+   "link": "https://example.com/fairs"
+  }
+ },
+ "teams": [
+  {
+   "id": "t1",
+   "name": "Management & Marketing"
+  },
+  {
+   "id": "t2",
+   "name": "Latin America"
+  },
+  {
+   "id": "t3",
+   "name": "Africa & Middle East"
+  },
+  {
+   "id": "t4",
+   "name": "Asia"
+  }
+ ],
+ "members": [
+  {
+   "id": "m1",
+   "name": "Elif Demir",
+   "title": "General Manager",
+   "teamId": "t1",
+   "phone": "+90 555 000 00 01",
+   "office": "+90 212 000 00 00 ext. 101",
+   "wa": "905550000001",
+   "email": "elif@meridian-fabrics.example",
+   "instagram": "demo.elif",
+   "linkedin": "demo-elif",
+   "photo": 1,
+   "video": 1,
+   "boss": "",
+   "orgOn": true,
+   "up": 0,
+   "down": 9
+  },
+  {
+   "id": "m2",
+   "name": "Kerem Yıldız",
+   "title": "Sales Director",
+   "teamId": "t1",
+   "phone": "+90 555 000 00 02",
+   "office": "+90 212 000 00 00 ext. 102",
+   "wa": "905550000002",
+   "email": "kerem@meridian-fabrics.example",
+   "instagram": "demo.kerem",
+   "linkedin": "demo-kerem",
+   "photo": 1,
+   "video": 0,
+   "boss": "m1",
+   "orgOn": true,
+   "up": 1,
+   "down": 9
+  },
+  {
+   "id": "m3",
+   "name": "Carlos Mendoza",
+   "title": "Regional Sales Manager – Latin America",
+   "teamId": "t2",
+   "phone": "+90 555 000 00 03",
+   "office": "+90 212 000 00 00 ext. 103",
+   "wa": "905550000003",
+   "email": "carlos@meridian-fabrics.example",
+   "instagram": "demo.carlos",
+   "linkedin": "demo-carlos",
+   "photo": 1,
+   "video": 0,
+   "boss": "m2",
+   "orgOn": true,
+   "up": 2,
+   "down": 1
+  },
+  {
+   "id": "m4",
+   "name": "Lucía Fernández",
+   "title": "Sales Executive – Latin America",
+   "teamId": "t2",
+   "phone": "+90 555 000 00 04",
+   "office": "+90 212 000 00 00 ext. 104",
+   "wa": "905550000004",
+   "email": "lucia@meridian-fabrics.example",
+   "instagram": "demo.lucia",
+   "linkedin": "demo-lucia",
+   "photo": 1,
+   "video": 0,
+   "boss": "m3",
+   "orgOn": true,
+   "up": 2,
+   "down": 0
+  },
+  {
+   "id": "m5",
+   "name": "Daniel Okoye",
+   "title": "Regional Sales Manager – Africa",
+   "teamId": "t3",
+   "phone": "+90 555 000 00 05",
+   "office": "+90 212 000 00 00 ext. 105",
+   "wa": "905550000005",
+   "email": "daniel@meridian-fabrics.example",
+   "instagram": "demo.daniel",
+   "linkedin": "demo-daniel",
+   "photo": 1,
+   "video": 0,
+   "boss": "m2",
+   "orgOn": true,
+   "up": 2,
+   "down": 1
+  },
+  {
+   "id": "m6",
+   "name": "Fatima Al-Sayed",
+   "title": "Sales Executive – Middle East",
+   "teamId": "t3",
+   "phone": "+90 555 000 00 06",
+   "office": "+90 212 000 00 00 ext. 106",
+   "wa": "905550000006",
+   "email": "fatima@meridian-fabrics.example",
+   "instagram": "demo.fatima",
+   "linkedin": "demo-fatima",
+   "photo": 1,
+   "video": 0,
+   "boss": "m5",
+   "orgOn": true,
+   "up": 2,
+   "down": 0
+  },
+  {
+   "id": "m7",
+   "name": "Mei Lin",
+   "title": "Regional Sales Manager – Asia",
+   "teamId": "t4",
+   "phone": "+90 555 000 00 07",
+   "office": "+90 212 000 00 00 ext. 107",
+   "wa": "905550000007",
+   "email": "mei@meridian-fabrics.example",
+   "instagram": "demo.mei",
+   "linkedin": "demo-mei",
+   "photo": 1,
+   "video": 0,
+   "boss": "m2",
+   "orgOn": true,
+   "up": 2,
+   "down": 1
+  },
+  {
+   "id": "m8",
+   "name": "Arjun Mehta",
+   "title": "Sales Executive – Asia",
+   "teamId": "t4",
+   "phone": "+90 555 000 00 08",
+   "office": "+90 212 000 00 00 ext. 108",
+   "wa": "905550000008",
+   "email": "arjun@meridian-fabrics.example",
+   "instagram": "demo.arjun",
+   "linkedin": "demo-arjun",
+   "photo": 1,
+   "video": 0,
+   "boss": "m7",
+   "orgOn": true,
+   "up": 2,
+   "down": 0
+  },
+  {
+   "id": "m9",
+   "name": "Zeynep Çelik",
+   "title": "Marketing Specialist",
+   "teamId": "t1",
+   "phone": "+90 555 000 00 09",
+   "office": "+90 212 000 00 00 ext. 109",
+   "wa": "905550000009",
+   "email": "zeynep@meridian-fabrics.example",
+   "instagram": "demo.zeynep",
+   "linkedin": "demo-zeynep",
+   "photo": 1,
+   "video": 0,
+   "boss": "m2",
+   "orgOn": true,
+   "up": 1,
+   "down": 0
+  }
+ ],
+ "faq": [
+  {
+   "q": "What do you produce?",
+   "a": "Knitted and woven mattress ticking, quilting fabrics and bedding textiles."
+  },
+  {
+   "q": "What is the minimum order quantity?",
+   "a": "Sample metres are available on request; production MOQ depends on the quality."
+  },
+  {
+   "q": "Which incoterms do you offer?",
+   "a": "EXW, FCA, FOB and CIF are available for most destinations."
+  },
+  {
+   "q": "Can I get samples?",
+   "a": "Yes. Message us on WhatsApp with your address and the qualities you are interested in."
+  }
+ ],
+ "sig": {
+  "tpl": "t1",
+  "blocks": [
+   {
+    "id": "bfair",
+    "type": "fair",
+    "on": true,
+    "dyn": false,
+    "title": "",
+    "col": "1",
+    "items": [
+     {
+      "name": "Heimtextil Frankfurt",
+      "date": "12–15 Jan 2027",
+      "place": "Hall 8.0 · Stand B21",
+      "cc": "de"
+     },
+     {
+      "name": "Istanbul Home Show",
+      "date": "3–7 Mar 2027",
+      "place": "Hall 4 · Stand 112",
+      "cc": "tr"
+     },
+     {
+      "name": "Home Textiles Expo Sao Paulo",
+      "date": "14–17 Jun 2027",
+      "place": "Pavilion B · Stand 37",
+      "cc": "br"
+     }
     ]
-  },
-  "ctpl": [
-    {
-      "id": "cdemo1",
-      "name": "Executive",
-      "cfg": {
-        "lay": "left",
-        "ps": 88,
-        "pr": 12,
-        "dv": true,
-        "dw": 3,
-        "sp": 14,
-        "font": "georgia",
-        "cs": "stack",
-        "bs": "outline",
-        "br": 6,
-        "ns": 17,
-        "rows": [
-          {
-            "k": "logo",
-            "on": true
-          },
-          {
-            "k": "name",
-            "on": true
-          },
-          {
-            "k": "tagline",
-            "on": false
-          },
-          {
-            "k": "contact",
-            "on": true
-          },
-          {
-            "k": "buttons",
-            "on": true
-          },
-          {
-            "k": "text",
-            "on": false
-          }
-        ]
-      }
-    },
-    {
-      "id": "cdemo2",
-      "name": "Card",
-      "cfg": {
-        "lay": "right",
-        "ps": 72,
-        "pr": 36,
-        "dv": false,
-        "cf": true,
-        "cr": 12,
-        "cg": "#f5f7fb",
-        "bs": "link",
-        "rows": [
-          {
-            "k": "logo",
-            "on": true
-          },
-          {
-            "k": "name",
-            "on": true
-          },
-          {
-            "k": "tagline",
-            "on": true
-          },
-          {
-            "k": "contact",
-            "on": true
-          },
-          {
-            "k": "buttons",
-            "on": true
-          },
-          {
-            "k": "text",
-            "on": false
-          }
-        ]
-      }
-    }
+   },
+   {
+    "id": "bhol",
+    "type": "holiday",
+    "on": true,
+    "dyn": false,
+    "title": "",
+    "col": "2",
+    "text": "Our office is closed 24 Dec – 2 Jan. Orders are answered from 3 Jan.",
+    "from": "2026-12-10",
+    "to": "2027-01-03"
+   },
+   {
+    "id": "blink",
+    "type": "link",
+    "on": true,
+    "title": "",
+    "col": "2",
+    "label": "Download the 2027 catalogue",
+    "url": "https://example.com/catalogue"
+   },
+   {
+    "id": "bpdf",
+    "type": "pdf",
+    "on": false,
+    "title": "",
+    "col": "2",
+    "label": "Product catalogue (PDF)"
+   },
+   {
+    "id": "bimg",
+    "type": "image",
+    "on": false,
+    "title": "",
+    "col": "1",
+    "width": 360
+   },
+   {
+    "id": "bgif",
+    "type": "gif",
+    "on": false,
+    "title": "",
+    "col": "1",
+    "width": 360
+   },
+   {
+    "id": "btxt",
+    "type": "text",
+    "on": false,
+    "dyn": false,
+    "title": "Notice",
+    "col": "1",
+    "text": "Free-text announcement block."
+   }
   ]
+ },
+ "ctpl": [
+  {
+   "id": "cdemo1",
+   "name": "Executive",
+   "cfg": {
+    "lay": "left",
+    "ps": 88,
+    "pr": 12,
+    "dv": true,
+    "dw": 3,
+    "sp": 14,
+    "font": "georgia",
+    "cs": "stack",
+    "bs": "outline",
+    "br": 6,
+    "ns": 17,
+    "rows": [
+     {
+      "k": "logo",
+      "on": true
+     },
+     {
+      "k": "name",
+      "on": true
+     },
+     {
+      "k": "tagline",
+      "on": false
+     },
+     {
+      "k": "contact",
+      "on": true
+     },
+     {
+      "k": "buttons",
+      "on": true
+     },
+     {
+      "k": "text",
+      "on": false
+     }
+    ]
+   }
+  },
+  {
+   "id": "cdemo2",
+   "name": "Card",
+   "cfg": {
+    "lay": "right",
+    "ps": 72,
+    "pr": 36,
+    "dv": false,
+    "cf": true,
+    "cr": 12,
+    "cg": "#f5f7fb",
+    "bs": "link",
+    "rows": [
+     {
+      "k": "logo",
+      "on": true
+     },
+     {
+      "k": "name",
+      "on": true
+     },
+     {
+      "k": "tagline",
+      "on": true
+     },
+     {
+      "k": "contact",
+      "on": true
+     },
+     {
+      "k": "buttons",
+      "on": true
+     },
+     {
+      "k": "text",
+      "on": false
+     }
+    ]
+   }
+  }
+ ],
+ "fn": {
+  "p-m1": "demo-m1.gif",
+  "v-m1": "demo-m1.mp4"
+ }
 }

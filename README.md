@@ -3,11 +3,11 @@
 **Email signatures and digital business cards that stay up to date, on a single Cloudflare Worker.**
 No build step, no dependencies, ~90 KB of code. Runs on the Cloudflare free tier (Workers + KV + D1).
 
-[Türkçe](README.tr.md) · MIT licensed · All demo data (company, people, phones, fairs) is fictional.
+English UI · cards and signatures in **6 languages** (EN, ES, TR, PT, FR, ZH) · MIT licensed · All demo data (company, people, phones, fairs, avatars, video) is fictional.
 
-| Signature templates | Digital card | Team page |
-|---|---|---|
-| ![Signatures](docs/sig-classic.png) | <img src="docs/card-mobile.png" width="220"> | ![Team](docs/team-page.png) |
+| Signature templates | Digital card (EN) | Digital card (ZH) | Team page |
+|---|---|---|---|
+| ![Signatures](docs/sig-classic.png) | <img src="docs/card-mobile.png" width="200"> | <img src="docs/card-mobile-zh.png" width="200"> | ![Team](docs/team-page.png) |
 
 ![Signature design studio](docs/admin-studio.png)
 
@@ -25,12 +25,12 @@ This project keeps the *parts that can update* (hosted images, logo, colors, lin
 - **QR share**: a contact QR that works offline and a QR link to the card; built-in **QR scanner** page (`/scan`)
 - **Org hierarchy** on the card, controlled per person: levels up and down (none / 1 / 2 / all)
 - Team directory page (`/`) grouped by team
-- 3 languages (EN / ES / TR), chosen from the browser or `?lang=`
+- **6 languages** (English, Spanish, Turkish, Portuguese, French, Chinese), chosen from the browser's `Accept-Language` or `?lang=`; a language switcher sits on every card
 
-### Email signatures (`/<name>/imza`)
-- **10 ready templates** (Classic, Compact, Top bar, Bottom bar, Vertical, Logo right, Minimal, Card, Bold name, Two columns) in 3 languages
+### Email signatures (`/<name>/signature`)
+- **10 ready templates** (Classic, Compact, Top bar, Bottom bar, Vertical, Logo right, Minimal, Card, Bold name, Two columns) in 6 languages
 - One-click **copy for Gmail / Outlook**, copy-as-HTML, and a **plain-text version for Gmail mobile**
-- Step-by-step install guide per person (`/<name>/kurulum`)
+- Step-by-step install guide per person (`/<name>/setup`)
 - Gmail size counter (limit 10,000 characters)
 - Signature buttons go through tracked redirects (`/go/<name>/wa|vcf|web|linkedin|instagram`)
 
@@ -56,6 +56,7 @@ This project keeps the *parts that can update* (hosted images, logo, colors, lin
 - Logo, the bar/divider images of the built-in templates and card links update inside **already-sent** signatures
 
 ### Photos, video and GIF
+- Fictional demo media is included (`assets/demo`: 9 illustrated avatars, an animated portrait video and a GIF) and loaded by `npm run seed`
 - Browser-side image resize on upload
 - Card **video** upload (up to 15 MB)
 - **"Make GIF from video"** button: encodes a short animated GIF in the browser (custom LZW encoder, portrait crop, face-safe framing) for the e-mail signature photo; large GIFs are downscaled with `ImageDecoder`
@@ -72,7 +73,8 @@ This project keeps the *parts that can update* (hosted images, logo, colors, lin
 - One ES module (`src/worker.mjs`), **Cloudflare Workers + KV (data and images) + D1 (analytics)**
 - Server-rendered HTML with inline styles for e-mail clients, no framework
 - Works without D1 (analytics is simply off)
-- `npm test` smoke-tests the app locally with in-memory storage; `npm run preview` serves it on localhost
+- `npm test` smoke-tests the app locally (all 6 languages) with in-memory storage; `npm run preview` serves the demo, with media, on localhost
+- `python3 tools/make-demo-media.py` regenerates the demo avatars, video and GIF (Pillow + ffmpeg)
 
 ## Quick start
 
@@ -87,7 +89,7 @@ npm run deploy
 ```
 
 Open `https://<your-worker>.workers.dev/admin`, enter the key, edit the demo company, press **Save and publish**.
-A fresh deployment already shows the fictional demo company (Meridian Bedding Fabrics). To also load the demo logo:
+A fresh deployment already shows the fictional demo company (Meridian Bedding Fabrics). To also load the demo logo, avatars, video and GIF:
 
 ```bash
 BASE_URL=https://<your-worker>.workers.dev ADMIN_KEY=... npm run seed
@@ -107,14 +109,14 @@ Honest limits:
 - **Outlook desktop shows only the first frame of a GIF.** Gmail, Apple Mail, Outlook web/mobile animate it.
 - Gmail mobile cannot use image signatures; use the plain-text version.
 - Some clients block remote images until the reader allows them.
-- The admin UI is in Turkish; cards and signatures support EN / ES / TR.
+- The admin UI is in English; cards, signatures and content blocks support EN / ES / TR / PT / FR / ZH. Text you type (names, FAQ, fairs) is shown as written in every language.
 - Single company per deployment. Multi-tenant (one subdomain per company) is on the roadmap.
 
 ## Roadmap
 - Multi-tenant mode (subdomain per company, per-company admin key)
 - Assign templates per team or person
 - Push signatures automatically (Google Workspace API, Outlook add-in)
-- Translated admin UI
+- Translate the admin UI (it is English only today)
 
 ## Data & privacy
 Everything is stored in your own Cloudflare account. Card pages are public by design (they are business cards); the admin API and image uploads require the admin key. Do not put anything secret in the data.

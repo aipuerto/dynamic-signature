@@ -3,6 +3,7 @@
 //   node scripts/smoke.mjs --serve    -> serves the app on http://localhost:8787 (in-memory KV, ADMIN_KEY=demo)
 import worker from '../src/worker.mjs';
 import http from 'node:http';
+import { readFileSync, readdirSync } from 'node:fs';
 
 export function mockEnv(key = 'demo') {
   const store = new Map();
@@ -20,6 +21,11 @@ const call = (env, path, init = {}) => worker.fetch(new Request('http://local.te
 
 if (process.argv.includes('--serve')) {
   const env = mockEnv('demo'), port = +process.env.PORT || 8787;
+  // preload the fictional demo company, logo, avatars, video and GIF into the in-memory KV
+  const CT = { jpg: 'image/jpeg', gif: 'image/gif', mp4: 'video/mp4' }, seed = JSON.parse(readFileSync(new URL('../seed/demo-data.json', import.meta.url), 'utf8'));
+  await env.KV.put('data', JSON.stringify(seed));
+  await env.KV.put('img:logo', readFileSync(new URL('../assets/logo.png', import.meta.url)), { metadata: { ct: 'image/png' } });
+  for (const f of readdirSync(new URL('../assets/demo/', import.meta.url))) await env.KV.put('img:' + f.replace(/\.[a-z0-9]+$/, ''), readFileSync(new URL('../assets/demo/' + f, import.meta.url)), { metadata: { ct: CT[f.split('.').pop()] } });
   http.createServer(async (rq, rs) => {
     const chunks = []; for await (const c of rq) chunks.push(c);
     const body = chunks.length ? Buffer.concat(chunks) : undefined;
@@ -34,9 +40,16 @@ if (process.argv.includes('--serve')) {
   let [r, t] = await txt('/'); ok(r.status === 200 && t.includes('Meridian'), 'team page');
   [r, t] = await txt('/elif-demir'); ok(r.status === 200 && t.includes('Elif Demir'), 'digital card');
   [r, t] = await txt('/elif-demir.vcf'); ok(t.includes('BEGIN:VCARD') && t.includes('Elif Demir'), 'vCard download');
-  [r, t] = await txt('/elif-demir/imza?lang=en'); ok(r.status === 200 && t.includes('<table'), 'signature page');
-  [r, t] = await txt('/elif-demir/imza?tpl=cdemo1'); ok(t.includes('Georgia'), 'studio template renders');
-  [r, t] = await txt('/elif-demir/kurulum'); ok(r.status === 200, 'install guide');
+  [r, t] = await txt('/elif-demir/signature?lang=en'); ok(r.status === 200 && t.includes('<table'), 'signature page');
+  [r, t] = await txt('/elif-demir/signature?tpl=cdemo1'); ok(t.includes('Georgia'), 'studio template renders');
+  [r, t] = await txt('/elif-demir/setup'); ok(r.status === 200, 'setup guide');
+  const T = { en: 'Save contact', es: 'Guardar contacto', tr: 'Rehbere ekle', pt: 'Salvar contato', fr: 'Enregistrer le contact', zh: '保存联系人' };
+  for (const [l, w] of Object.entries(T)) {
+    [r, t] = await txt('/elif-demir?lang=' + l); ok(r.status === 200 && t.includes(w) && t.includes('<html lang="' + l + '"'), 'card in ' + l);
+    [r, t] = await txt('/elif-demir/signature?lang=' + l); ok(r.status === 200 && t.includes('<table'), 'signature in ' + l);
+    [r] = await txt('/img/d-bfair-' + l); ok(r.status === 200 && r.headers.get('content-type') === 'image/png', 'dynamic block image in ' + l);
+  }
+  [r, t] = await txt('/admin'); ok(!/Kaydet|Yükle|İmza|Firma|Ekip|Kişi|Sil<|Şablon|Fuar/.test(t), 'admin UI is English-only');
   [r] = await txt('/go/elif-demir/wa'); ok(r.status === 302 && r.headers.get('location').startsWith('https://wa.me/'), 'WhatsApp redirect');
   [r] = await txt('/api/data'); ok(r.status === 401, 'admin API locked without key');
   [r, t] = await txt('/api/data', { headers: H }); const d = JSON.parse(t); ok(r.status === 200 && d.members.length === 9, 'admin API returns demo data');
