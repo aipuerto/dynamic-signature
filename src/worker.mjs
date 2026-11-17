@@ -370,7 +370,7 @@ function adminClient(){
    rows.forEach(function(r){var x=0;if('plain' in r){c.fillStyle=R.text;c.font='12px '+F;c.fillText(r.plain,0,y+2)}else{if(r.flag){c.drawImage(r.flag,0,y+2,16,Math.round(16*r.flag.naturalHeight/r.flag.naturalWidth));x=22}c.fillStyle=R.text;c.font='bold 12px '+F;c.fillText(r.bold,x,y+2);c.font='12px '+F;if(r.rest)c.fillText(r.rest.replace(/^ · /,''),x,y+2+lh)}y+=lh+(r.rest?lh+4:0)});
    return new Promise(function(res,rej){cv.toBlob(function(bl){bl?res(bl):rej('png')},'image/png')})})}
  function dynRender(){var R=autoRoles(S.company),jobs=[];((S.sig&&S.sig.blocks)||[]).forEach(function(b){
-   if(!b.dyn||['fair','holiday','text'].indexOf(b.type)<0)return;var hs=JSON.stringify(['v2',b.type,b.title,b.text,b.items,R]);if(b.dh===hs)return;
+   if(!b.dyn||['fair','holiday','text'].indexOf(b.type)<0)return;var hs=JSON.stringify(['v3',b.type,b.title,b.text,b.items,R]);if(b.dh===hs)return;
    jobs.push(function(){return Promise.all(['en','es','tr','pt','fr','zh'].map(function(l){return drawDyn(b,l,R).then(function(bl){return api('/api/img/d-'+b.id+'-'+l,{method:'POST',headers:{'content-type':'image/png'},body:bl}).then(function(r){if(!r.ok)throw 'upload'})})})).then(function(){b.dh=hs})})});
   return jobs.reduce(function(p,j){return p.then(j)},Promise.resolve()).catch(function(e){say('Could not generate image: '+e)})}
  function fld(label,path,val,area){return '<label class="f">'+label+(area?'<textarea data-k="'+path+'">'+esc(val)+'</textarea>':'<input type="text" data-k="'+path+'" value="'+esc(val)+'">')+'</label>'}
@@ -545,6 +545,7 @@ async function route(req,env,ctx){
    if(s>=n||s>e)return new Response(null,{status:416,headers:{'content-range':'bytes */'+n}});
    h['content-range']='bytes '+s+'-'+e+'/'+n;return new Response(r.value.slice(s,e+1),{status:206,headers:h})}
   return new Response(r.value,{headers:h})}
+ const old=p.match(/^\/([a-z0-9-]+)\/(imza|kurulum)$/);if(old)return Response.redirect(o+'/'+old[1]+'/'+(old[2]==='imza'?'signature':'setup')+u.search,301);
  if(p==='/admin')return adminPage();
  if(p==='/scan')return scanPage();
  const S=await load(env);
